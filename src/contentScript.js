@@ -15,11 +15,11 @@ call you a cheater and make you type a CAPTCHA, which this code does not solve.
 
 // if we fail to find the current word
 // that the user needs to type, wait 1000ms and try again
-var timeout = 1000;
+let timeout = 1000;
 
 // find the next word the user needs to type then fill the input panel
 function locateNextWord() {
-	setTimeout(function(){
+	setTimeout(() =>{
 
 		// pull the current word from the page via JQuery
 		var $currentWord = $(".nonHideableWords span:nth-of-type(2)");
@@ -42,7 +42,7 @@ function fillInputPanel(currentWordString){
 }
 
 // every time the user presses space, call locateNextWord() again
-$('body').keyup(function(e){
+$('body').keyup(e => {
    if(e.keyCode == 32){
        locateNextWord();
    }
